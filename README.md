@@ -30,7 +30,8 @@ Added:
     // Timezone use 00 on last 2 octets with the sample size ive tested. 
     uid[5] = 0x00;
     uid[6] = 0x00;
-}```
+}
+```
 
 ```static void nfc_generate_mf_tz_common(NfcDeviceData* data) {
     data->nfc_data.type = FuriHalNfcTypeA;
@@ -41,7 +42,8 @@ Added:
     data->nfc_data.atqa[1] = 0x00;
     data->nfc_data.sak = 0x00;
     data->protocol = NfcDeviceProtocolMifareUl;
-}```
+}
+```
 
 ```static void nfc_generate_mf_tz_orig(NfcDeviceData* data) {
     nfc_generate_common_start(data);
@@ -54,12 +56,14 @@ Added:
     nfc_generate_mf_ul_copy_uid_with_bcc(data);
     // TODO: what's internal byte on page 2?
     memset(&mful->data[4 * 4], 0xFF, 4);
-}```
+}
+```
 
 ```static const NfcGenerator mf_tz_generator = {
     .name = "Mifare (Timezone)",
     .generator_func = nfc_generate_mf_tz_orig,
     .next_scene = NfcSceneMfUltralightMenu,
-};```
+};
+```
 
 And added "&mf_tz_generator," to "const NfcGenerator* const nfc_generators[] = {"
