@@ -6,6 +6,7 @@ This is a modded file for the built in flipper NFC app that adds the option to c
 
 DO NOT USE THIS TO STEAL OTHER PEOPLES MONEY. THIS IS A PROOF OF CONCEPT TO SHOW THE INSECURITY OF ONLY USING THE UID IN A CARD BASED MONEY SYSTEM. I HAVE NOT TESTED THIS AT ALL. THE CHANCE OF YOU FINDING A CARD THAT HAS MONEY, IS A STAFF, A TECH OR A VALID CARD IS SUPER LOW. YOU WILL PROBABLY GET SPOTTED BY A STAFF MEMBER IF YOU ARE TRYING THIS. IT IS NOT MY RESPONSIBILITY IF YOU GET CAUGHT, FINED, BANNED, JAILED OR THE EARTH OPENS UP AND SWALLOWS YOU WHOLE.
 
+Please note that I cannot program in C or C++ or any form of C programming. I can do python, AutoIT, Arduino, Bash and Batch but I'm waaaaay out of practice. This is just hacked up using what was already there in the unleashed firmware. The file is prob different in OG, Roguemaster or any other firmware you want to use.
 
 Instructions:
 Copy this file over the top of the original file and build the firmware. tested with unleashed 018
