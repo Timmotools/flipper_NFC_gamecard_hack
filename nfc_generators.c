@@ -135,8 +135,12 @@ static void nfc_generate_mf_tz_orig(NfcDeviceData* data) {
     mful->data_size = 16 * 4;
     mful->data_read = mful->data_size;
     nfc_generate_mf_ul_copy_uid_with_bcc(data);
-    // TODO: what's internal byte on page 2?
-    memset(&mful->data[4 * 4], 0xFF, 4);
+    // Theres some carry over data between the few cards I have here. This data is below.
+    memset(&mful->data[9], 0x48, 1);
+    memset(&mful->data[10], 0xF0, 1);
+    // There looks to be some random data for bytes 16 to 31. 
+    furi_hal_random_fill_buf(&mful->data[16], 16);
+
 }
 
 static void nfc_generate_mf_ul_ntag203(NfcDeviceData* data) {
