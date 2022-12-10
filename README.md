@@ -1,5 +1,7 @@
 # flipper_NFC_gamecard_hack
 
+******** This does not work anymore. The latest git pull has gotten rid of the functions and the files. At this stage there is no fix. ***********
+
 In Melbourne AU we have a popular arcade chain that uses the EMBED card system with Mifare ULTRALIGHT cards for game cards. I did some checks with the small pool of cards I have and found the last 2 octets are not changing from 0x00.
 
 This is a modded file for the built in flipper NFC app that adds the option to create a random game card based off my findings. In theory it should work but who knows. I dont think it checks data stored on the card.
