@@ -1,6 +1,7 @@
 # flipper_NFC_gamecard_hack
 
-******** This does not work anymore. The latest git pull has gotten rid of the functions and the files. At this stage there is no fix. ***********
+********     This does not work anymore. The latest git pull has gotten rid of the functions and the files. At this stage there is no fix. **********
+*****  found the fix. the file is now located in lib/nfc/helpers/. some things also changed. new upload is the updated version that compiles.  ******
 
 In Melbourne AU we have a popular arcade chain that uses the EMBED card system with Mifare ULTRALIGHT cards for game cards. I did some checks with the small pool of cards I have and found the last 2 octets are not changing from 0x00.
 
@@ -66,7 +67,6 @@ static void nfc_generate_mf_tz_orig(NfcDeviceData* data) {
 static const NfcGenerator mf_tz_generator = {
     .name = "Mifare (Timezone)",
     .generator_func = nfc_generate_mf_tz_orig,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 ```
 
