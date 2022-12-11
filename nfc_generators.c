@@ -29,6 +29,7 @@ static void nfc_generate_mf_tz_uid(uint8_t* uid) {
     uid[0] = NXP_MANUFACTURER_ID;
     furi_hal_random_fill_buf(&uid[1], 6);
     // Timezone use 00 on last 2 octets with the sample size ive tested. 
+    
     uid[5] = 0x00;
     uid[6] = 0x00;
 }
@@ -87,7 +88,6 @@ static void nfc_generate_mf_tz_common(NfcDeviceData* data) {
     data->nfc_data.sak = 0x00;
     data->protocol = NfcDeviceProtocolMifareUl;
 }
-
 static void
     nfc_generate_mf_classic_common(NfcDeviceData* data, uint8_t uid_len, MfClassicType type) {
     data->nfc_data.type = FuriHalNfcTypeA;
@@ -142,7 +142,6 @@ static void nfc_generate_mf_tz_orig(NfcDeviceData* data) {
     furi_hal_random_fill_buf(&mful->data[16], 16);
 
 }
-
 static void nfc_generate_mf_ul_ntag203(NfcDeviceData* data) {
     nfc_generate_common_start(data);
     nfc_generate_mf_ul_common(data);
@@ -412,113 +411,94 @@ static void nfc_generate_mf_classic_4k_7b_uid(NfcDeviceData* data) {
 static const NfcGenerator mf_tz_generator = {
     .name = "Mifare (Timezone)",
     .generator_func = nfc_generate_mf_tz_orig,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
-
 static const NfcGenerator mf_ul_generator = {
     .name = "Mifare Ultralight",
     .generator_func = nfc_generate_mf_ul_orig,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator mf_ul_11_generator = {
     .name = "Mifare Ultralight EV1 11",
     .generator_func = nfc_generate_mf_ul_11,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator mf_ul_h11_generator = {
     .name = "Mifare Ultralight EV1 H11",
     .generator_func = nfc_generate_mf_ul_h11,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator mf_ul_21_generator = {
     .name = "Mifare Ultralight EV1 21",
     .generator_func = nfc_generate_mf_ul_21,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator mf_ul_h21_generator = {
     .name = "Mifare Ultralight EV1 H21",
     .generator_func = nfc_generate_mf_ul_h21,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag203_generator = {
     .name = "NTAG203",
     .generator_func = nfc_generate_mf_ul_ntag203,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag213_generator = {
     .name = "NTAG213",
     .generator_func = nfc_generate_ntag213,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag215_generator = {
     .name = "NTAG215",
     .generator_func = nfc_generate_ntag215,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag216_generator = {
     .name = "NTAG216",
     .generator_func = nfc_generate_ntag216,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag_i2c_1k_generator = {
     .name = "NTAG I2C 1k",
     .generator_func = nfc_generate_ntag_i2c_1k,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag_i2c_2k_generator = {
     .name = "NTAG I2C 2k",
     .generator_func = nfc_generate_ntag_i2c_2k,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag_i2c_plus_1k_generator = {
     .name = "NTAG I2C Plus 1k",
     .generator_func = nfc_generate_ntag_i2c_plus_1k,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator ntag_i2c_plus_2k_generator = {
     .name = "NTAG I2C Plus 2k",
     .generator_func = nfc_generate_ntag_i2c_plus_2k,
-    .next_scene = NfcSceneMfUltralightMenu,
 };
 
 static const NfcGenerator mifare_classic_1k_4b_uid_generator = {
     .name = "Mifare Classic 1k 4byte UID",
     .generator_func = nfc_generate_mf_classic_1k_4b_uid,
-    .next_scene = NfcSceneMfClassicMenu,
 };
 
 static const NfcGenerator mifare_classic_1k_7b_uid_generator = {
     .name = "Mifare Classic 1k 7byte UID",
     .generator_func = nfc_generate_mf_classic_1k_7b_uid,
-    .next_scene = NfcSceneMfClassicMenu,
 };
 
 static const NfcGenerator mifare_classic_4k_4b_uid_generator = {
     .name = "Mifare Classic 4k 4byte UID",
     .generator_func = nfc_generate_mf_classic_4k_4b_uid,
-    .next_scene = NfcSceneMfClassicMenu,
 };
 
 static const NfcGenerator mifare_classic_4k_7b_uid_generator = {
     .name = "Mifare Classic 4k 7byte UID",
     .generator_func = nfc_generate_mf_classic_4k_7b_uid,
-    .next_scene = NfcSceneMfClassicMenu,
 };
 
 const NfcGenerator* const nfc_generators[] = {
-    &mf_tz_generator,
+	&mf_tz_generator,	 
     &mf_ul_generator,
     &mf_ul_11_generator,
     &mf_ul_h11_generator,
