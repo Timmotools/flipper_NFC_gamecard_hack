@@ -1,5 +1,7 @@
 # flipper_NFC_gamecard_hack
 
+I have uploaded the firmware for a short amount of time. I have COVID and am unable to test this. If someone reads this and wants to test, load the updater in the zip file on the flipper and let me know. Send me a message here https://www.reddit.com/user/Calm_Spread5505 
+
 
 In Melbourne AU we have a popular arcade chain that uses the EMBED card system with Mifare ULTRALIGHT cards for game cards. I did some checks with the small pool of cards I have and found the last 2 octets are not changing from 0x00.
 
