@@ -1,18 +1,18 @@
 # flipper_NFC_gamecard_hack
-'''
-********     This does not work anymore. The latest git pull has gotten rid of the functions and the files. At this stage there is no fix. **********
-*****  found the fix. the file is now located in lib/nfc/helpers/. some things also changed. new upload is the updated version that compiles.  ******
-'''
+
+
 In Melbourne AU we have a popular arcade chain that uses the EMBED card system with Mifare ULTRALIGHT cards for game cards. I did some checks with the small pool of cards I have and found the last 2 octets are not changing from 0x00.
 
 This is a modded file for the built in flipper NFC app that adds the option to create a random game card based off my findings. In theory it should work but who knows. I dont think it checks data stored on the card.
 
-DO NOT USE THIS TO STEAL OTHER PEOPLES MONEY. THIS IS A PROOF OF CONCEPT TO SHOW THE INSECURITY OF ONLY USING THE UID IN A CARD BASED MONEY SYSTEM. I HAVE NOT TESTED THIS AT ALL. THE CHANCE OF YOU FINDING A CARD THAT HAS MONEY, IS A STAFF, A TECH OR A VALID CARD IS SUPER LOW. YOU WILL PROBABLY GET SPOTTED BY A STAFF MEMBER IF YOU ARE TRYING THIS. IT IS NOT MY RESPONSIBILITY IF YOU GET CAUGHT, FINED, BANNED, JAILED OR THE EARTH OPENS UP AND SWALLOWS YOU WHOLE.
+DO NOT USE THIS TO STEAL OTHER PEOPLES MONEY. THIS IS A PROOF OF CONCEPT TO SHOW THE INSECURITY OF ONLY USING THE UID IN A CARD BASED MONEY SYSTEM. I HAVE NOT TESTED THIS AT ALL. THE CHANCE OF YOU FINDING A CARD THAT HAS MONEY, IS A STAFF, A TECH OR A VALID NON EXPIRED CARD IS SUPER LOW. YOU WILL PROBABLY GET SPOTTED BY A STAFF MEMBER IF YOU ARE TRYING THIS. IT IS NOT MY RESPONSIBILITY IF YOU GET CAUGHT, FINED, BANNED, JAILED OR THE EARTH OPENS UP AND SWALLOWS YOU WHOLE.
 
 Please note that I cannot program in C or C++ or any form of C programming. I can do python, AutoIT, Arduino, Bash and Batch but I'm waaaaay out of practice. This is just hacked up using what was already there in the unleashed firmware. The file is prob different in OG, Roguemaster or any other firmware you want to use.
 
 Instructions:
-Copy this file over the top of the original file and build the firmware. tested with unleashed 018
+Copy this file over the top of the original file located ``` lib/nfc/helpers/ ``` and build the firmware. tested with unleashed unlshd-020
+
+Once the new compiled firmware is loaded onto the flipper go to Menu -> NFC -> Add Manually -> Mifare (Timezone)
 
 Do not copy to the flipper. nothing will change.
 
